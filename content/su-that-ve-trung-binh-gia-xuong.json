@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "su-that-ve-trung-binh-gia-xuong",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Trung bình giá xuống",
+      "highlight": "Trung bình giá",
+      "subheading": "Chiến thuật cứu cánh hay cái bẫy?",
+      "duration": 4.5
+    },
+    {
+      "type": "bullets",
+      "heading": "Khi cổ phiếu giảm sâu",
+      "items": [
+        "Thấy rẻ lại",
+        "Càng mua càng lỗ",
+        "Hết sạch tiền mặt",
+        "Tâm lý hoảng loạn"
+      ],
+      "narration": "Nhiều bạn thấy cổ phiếu giảm sâu thì nghĩ là rẻ rồi liên tục mua thêm. Kết quả là càng mua càng lỗ và hết sạch tiền mặt.",
+      "duration": 5.5
+    },
+    {
+      "type": "comparison",
+      "heading": "Đầu tư khác nhau thế nào",
+      "left": {
+        "title": "Trung bình xuống",
+        "items": [
+          "Bắt dao rơi",
+          "Sai xu hướng",
+          "Áp lực tâm lý lớn"
+        ]
+      },
+      "right": {
+        "title": "Theo xu hướng",
+        "items": [
+          "Chờ tín hiệu",
+          "Thuận dòng tiền",
+          "Quản trị rủi ro"
+        ]
+      },
+      "narration": "Trung bình giá xuống giống như bạn đang cố bắt một con dao rơi và đi ngược lại xu hướng thị trường, trong khi theo xu hướng là chờ đợi tín hiệu an toàn.",
+      "duration": 6.5
+    },
+    {
+      "type": "line-chart",
+      "heading": "Sức nặng tài chính",
+      "data": [
+        {
+          "label": "Tuần một",
+          "value": 100
+        },
+        {
+          "label": "Tuần hai",
+          "value": 85
+        },
+        {
+          "label": "Tuần ba",
+          "value": 65
+        },
+        {
+          "label": "Tuần bốn",
+          "value": 40
+        }
+      ],
+      "narration": "Nhìn vào biểu đồ này, tài khoản của bạn sẽ teo tóp dần nếu cứ đổ thêm tiền vào một mã đang lao dốc mà không có điểm dừng.",
+      "duration": 6.0
+    },
+    {
+      "type": "quote",
+      "text": "Cắt lỗ là bảo vệ vốn, mua bình quân giá xuống là đánh cược với may rủi.",
+      "source": "VN Trend",
+      "narration": "Hãy nhớ rằng, cắt lỗ là để bảo vệ nguồn vốn, còn mua bình quân giá xuống chỉ là đánh cược với may rủi.",
+      "duration": 5.5
+    },
+    {
+      "type": "outro",
+      "heading": "Theo dõi VN Trend",
+      "subheading": "Góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "handle": "@VNTrend",
+      "duration": 5.0
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
