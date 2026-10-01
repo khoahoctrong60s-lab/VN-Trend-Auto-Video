@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "su-khac-biet-f0-va-f1",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Sai lầm khi chọn sai phong cách",
+      "subheading": "Bí quyết sống sót cho nhà đầu tư mới",
+      "highlight": [
+        "chọn sai phong cách"
+      ],
+      "duration": 4.5,
+      "narration": "Sai lầm lớn nhất của nhà đầu tư mới là chọn sai phong cách giao dịch."
+    },
+    {
+      "type": "comparison",
+      "heading": "Lướt sóng hay nắm giữ",
+      "left": {
+        "title": "Đầu cơ",
+        "items": [
+          "Theo từng con sóng",
+          "Dễ bị tâm lý cuốn",
+          "Cần bảng điện liên tục"
+        ]
+      },
+      "right": {
+        "title": "Theo xu hướng",
+        "items": [
+          "Nhìn bức tranh lớn",
+          "Quản trị vốn chặt",
+          "Thảnh thơi đầu óc"
+        ]
+      },
+      "duration": 6.0,
+      "narration": "Đầu cơ theo từng con sóng thường dễ bị tâm lý cuốn đi, trong khi theo xu hướng giúp chúng ta thảnh thơi đầu óc hơn."
+    },
+    {
+      "type": "bullets",
+      "heading": "Ba bước nhận diện xu hướng",
+      "items": [
+        "Xác định đỉnh đáy sau cao hơn",
+        "Dùng đường trung bình động",
+        "Kiên nhẫn chờ điểm mua chuẩn"
+      ],
+      "duration": 5.5,
+      "narration": "Ba bước nhận diện xu hướng gồm xác định đỉnh đáy sau cao hơn, dùng đường trung bình động và kiên nhẫn chờ điểm mua chuẩn."
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Hiệu suất theo chu kỳ",
+      "data": [
+        {
+          "label": "Tích lũy",
+          "value": 15
+        },
+        {
+          "label": "Đẩy giá",
+          "value": 65
+        },
+        {
+          "label": "Phân phối",
+          "value": 20
+        }
+      ],
+      "duration": 5.0,
+      "narration": "Giai đoạn đẩy giá luôn chiếm phần lớn lợi nhuận trong một chu kỳ tăng trưởng của thị trường."
+    },
+    {
+      "type": "quote",
+      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "source": "VN Trend",
+      "duration": 4.0,
+      "narration": "Hãy nhớ câu nói kinh điển: xu hướng là bạn cho đến khi nó đảo chiều."
+    },
+    {
+      "type": "outro",
+      "heading": "Giao dịch có kỷ luật",
+      "handle": "@VNTrend",
+      "subheading": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "duration": 5.0,
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Hẹn gặp lại bạn ở các video sau."
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
