@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "hieu-dung-ve-dong-tien-thong-minh",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Đọc dòng tiền thông minh",
+      "subheading": "Bí quyết nương theo xu hướng lớn trên thị trường",
+      "highlight": [
+        "dòng tiền thông minh"
+      ],
+      "duration": 4.5,
+      "narration": "Đọc dòng tiền thông minh là bí quyết nương theo xu hướng lớn trên thị trường."
+    },
+    {
+      "type": "bullets",
+      "heading": "Dấu hiệu nhận biết",
+      "items": [
+        "Thanh khoản tăng vọt",
+        "Nhóm dẫn dắt đồng thuận",
+        "Bỏ qua tin đồn nhiễu loạn"
+      ],
+      "duration": 5.5,
+      "narration": "Dấu hiệu nhận biết là thanh khoản tăng vọt, nhóm dẫn dắt đồng thuận và bỏ qua tin đồn nhiễu loạn."
+    },
+    {
+      "type": "comparison",
+      "heading": "Cách hành động",
+      "left": {
+        "title": "Nhà đầu tư mới",
+        "items": [
+          "Mua khi thấy hô hào",
+          "Sợ hãi khi rung lắc"
+        ]
+      },
+      "right": {
+        "title": "Dòng tiền lớn",
+        "items": [
+          "Tích lũy âm thầm",
+          "Kiên nhẫn chờ xu hướng"
+        ]
+      },
+      "duration": 6.5,
+      "narration": "Nhà đầu tư mới thường mua khi thấy hô hào và sợ hãi khi rung lắc. Trong khi đó, dòng tiền lớn tích lũy âm thầm và kiên nhẫn chờ xu hướng."
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Sức mạnh xu hướng",
+      "data": [
+        {
+          "label": "Tích lũy",
+          "value": 30
+        },
+        {
+          "label": "Bùng nổ",
+          "value": 75
+        },
+        {
+          "label": "Phân phối",
+          "value": 90
+        }
+      ],
+      "duration": 5.0,
+      "narration": "Nhìn vào biểu đồ, giai đoạn tích lũy có giá trị ba mươi, bùng nổ là bảy mươi lăm và phân phối đạt chín mươi."
+    },
+    {
+      "type": "quote",
+      "heading": "Góc nhìn",
+      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "source": "VN Trend",
+      "duration": 4.5,
+      "narration": "Hãy nhớ câu nói, xu hướng là bạn cho đến khi nó đảo chiều."
+    },
+    {
+      "type": "outro",
+      "heading": "Đầu tư tỉnh táo cùng VN Trend",
+      "subheading": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "handle": "@VNTrend",
+      "duration": 5.0,
+      "narration": "Đầu tư tỉnh táo cùng VN Trend. Lưu ý, đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư."
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
