@@ -1,0 +1,109 @@
+name: Tạo và đăng video VN Trend
+
+# Repo này ĐỘC LẬP với repo "Quét VNTrend và đăng bài tự động" (text/ảnh) —
+# không dùng chung secret, không dùng chung code, chỉ cùng đăng lên 1 Facebook
+# Page. Vì repo này PUBLIC, Actions ở đây KHÔNG tính vào giới hạn phút miễn
+# phí 2.000 phút/tháng của GitHub (chỉ áp dụng cho repo Private).
+
+on:
+  schedule:
+    # 1 lần/tuần, tối Thứ 5, 20:00 giờ Việt Nam (UTC+7) = 13:00 UTC. Bắt đầu
+    # thận trọng vì chưa đo được thời gian render thật trên Actions — có thể
+    # tăng tần suất sau khi chạy thử vài lần và ưng ý chất lượng/thời gian.
+    - cron: "0 13 * * 4"
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Chủ đề video (để trống để Gemini tự chọn)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Chỉ render, không đăng lên Facebook (gõ true/false)"
+        required: false
+        default: "false"
+
+jobs:
+  create-and-post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cài Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Cài Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Cài dependencies Node (Puppeteer tự tải Chromium lần đầu)
+        run: npm ci
+
+      - name: Cài dependencies Python
+        run: pip install -r requirements.txt
+
+      - name: Sinh kịch bản + content.json bằng Gemini
+        id: gen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TOPIC: ${{ github.event.inputs.topic }}
+        run: |
+          if [ -n "$TOPIC" ]; then
+            JSON_PATH=$(python scripts/gen_content.py --topic "$TOPIC")
+          else
+            JSON_PATH=$(python scripts/gen_content.py)
+          fi
+          echo "json_path=$JSON_PATH" >> "$GITHUB_OUTPUT"
+          echo "caption_path=${JSON_PATH%.json}.caption.txt" >> "$GITHUB_OUTPUT"
+
+      - name: Kiểm tra content hợp lệ
+        run: npm run validate -- "${{ steps.gen.outputs.json_path }}"
+
+      - name: Sinh giọng đọc + nhạc + SFX (edge TTS, cần mạng)
+        run: npm run gen-audio -- "${{ steps.gen.outputs.json_path }}"
+
+      - name: Render video MP4
+        id: render
+        run: |
+          npm run render -- "${{ steps.gen.outputs.json_path }}"
+          VIDEO_PATH=$(ls -t output/*.mp4 | head -1)
+          echo "Video: $VIDEO_PATH ($(du -h "$VIDEO_PATH" | cut -f1))"
+          echo "video_path=$VIDEO_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Đăng video lên Facebook Page
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          CAPTION="$(cat "${{ steps.gen.outputs.caption_path }}")"
+          python scripts/post_video_to_facebook.py "${{ steps.render.outputs.video_path }}" "$CAPTION" "${ARGS[@]}"
+
+      - name: Lưu lại content.json + caption đã sinh vào repo
+        if: always()
+        run: |
+          git config user.name "vn-trend-video-bot"
+          git config user.email "bot@users.noreply.github.com"
+          for f in "${{ steps.gen.outputs.json_path }}" "${{ steps.gen.outputs.caption_path }}"; do
+            if [ -f "$f" ]; then
+              git add "$f"
+            fi
+          done
+          git diff --cached --quiet || git commit -m "chore: thêm video $(date -u +%F)"
+          for i in 1 2 3; do
+            git push && break
+            echo "Push bị từ chối, thử pull --rebase rồi push lại (lần $i)..."
+            git pull --rebase
+            sleep $((RANDOM % 10 + 1))
+          done
