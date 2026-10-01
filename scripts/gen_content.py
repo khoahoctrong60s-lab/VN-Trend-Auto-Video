@@ -73,9 +73,13 @@ LUÔN là "vi-VN-HoaiMyNeural" — không được đổi sang "vieneu" hay gi�
 chủ đề là gì.
 
 Quy tắc nội dung:
-- Mở đầu bằng scene "title" (badge, heading ≤ 40 ký tự, highlight mảng từ khoá
-  cần tô màu, subheading), kết thúc bằng scene "outro" (heading + handle kênh,
-  handle cố định là "@VNTrend").
+- Mở đầu bằng scene "title": có "badge", "heading" (≤ 40 ký tự), "subheading",
+  và BẮT BUỘC field "highlight" (chú ý: số ÍT, không phải "highlights") —
+  LUÔN LUÔN là MỘT MẢNG chuỗi, ví dụ đúng: "highlight": ["3 bước"] — KHÔNG
+  BAO GIỜ được viết thành chuỗi thường như "highlight": "3 bước". Mỗi phần tử
+  trong mảng phải là 1 cụm từ xuất hiện nguyên văn trong "heading".
+  Kết thúc bằng scene "outro" (heading + handle kênh, handle cố định là
+  "@VNTrend").
 - Mỗi scene có "narration": lời đọc 1-2 câu, TỰ NHIÊN như người nói, viết SỐ RA
   CHỮ để đọc rõ (vd "hai mươi triệu", "năm mươi phần trăm").
 - Nhịp đọc tiếng Việt ~20-25 ký tự/giây: đặt duration sao cho

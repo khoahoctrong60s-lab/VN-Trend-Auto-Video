@@ -67,6 +67,12 @@ function validate(content, opts = {}) {
     if (scene.type === 'title' && !scene.heading) {
       errors.push(label + ' (title): thiếu "heading"');
     }
+    if (scene.type === 'title' && scene.highlight !== undefined && !Array.isArray(scene.highlight)) {
+      errors.push(
+        label + ' (title): "highlight" phải là MẢNG chuỗi (vd ["3 bước"]), ' +
+        'không phải ' + (typeof scene.highlight) + ' — field hay bị nhầm thành chuỗi hoặc tên "highlights" (số nhiều).'
+      );
+    }
     if (scene.type === 'bullets' && (!Array.isArray(scene.items) || !scene.items.length)) {
       errors.push(label + ' (bullets): thiếu "items"');
     }
