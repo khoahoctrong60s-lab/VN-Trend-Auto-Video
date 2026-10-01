@@ -256,36 +256,43 @@ async function main() {
   await buildMusic(total, musicFile, content.audio || {});
   manifest.music = 'music.mp3';
 
-  // SFX theo từng scene (khớp thời điểm hiệu ứng, tham chiếu scenes/*.js)
-  const per = (sceneIdx, frac) => { // tiến độ 0..1 trong scene → giây toàn video
-    const e = manifest.entries[sceneIdx];
-    return e.start + e.duration * frac;
+  // SFX theo LOẠI scene (không theo vị trí/index cố định) — content.json do
+  // Gemini sinh có thể có 6-9 scene, thứ tự/số lượng mỗi loại không cố định
+  // (vd 2 scene "bullets", không có "line-chart"...). Bản cũ hardcode đúng 8
+  // scene theo 1 thứ tự duy nhất (title, bullets, bar-chart, line-chart,
+  // number-counter, comparison, quote, outro) — "per(7, ...)" sẽ ra undefined
+  // và crash ngay khi video có ÍT HƠN 8 scene hoặc khác thứ tự đó.
+  const SFX_RULES = {
+    'title': [{ name: 'whoosh', frac: 0.02 }],
+    'bullets': [
+      { name: 'pop', frac: 0.15 }, { name: 'pop', frac: 0.19 },
+      { name: 'pop', frac: 0.32 }, { name: 'pop', frac: 0.45 },
+    ],
+    'bar-chart': [
+      { name: 'pop', frac: 0.15 }, { name: 'whoosh', frac: 0.18 },
+      { name: 'pop', frac: 0.38 }, { name: 'pop', frac: 0.58 },
+    ],
+    'line-chart': [
+      { name: 'whoosh', frac: 0.12 }, { name: 'pop', frac: 0.28 },
+      { name: 'pop', frac: 0.46 }, { name: 'pop', frac: 0.64 },
+    ],
+    'number-counter': [
+      { name: 'whoosh', frac: 0.03 }, { name: 'chime', frac: 0.45 },
+    ],
+    'comparison': [
+      { name: 'whoosh', frac: 0.1 }, { name: 'pop', frac: 0.18 },
+      { name: 'pop', frac: 0.42 }, { name: 'pop', frac: 0.56 }, { name: 'pop', frac: 0.7 },
+    ],
+    'quote': [{ name: 'chime', frac: 0.08 }],
+    'outro': [{ name: 'whoosh', frac: 0.03 }, { name: 'chime', frac: 0.35 }],
   };
-  const SFX_PLAN = [
-    { name: 'whoosh', at: per(0, 0.02) },   // title: badge hiện
-    { name: 'pop', at: per(1, 0.15) },      // bullets: heading hiện
-    { name: 'pop', at: per(1, 0.19) },      // bullets: item 1
-    { name: 'pop', at: per(1, 0.32) },      // bullets: item 2
-    { name: 'pop', at: per(1, 0.45) },      // bullets: item 3
-    { name: 'pop', at: per(2, 0.15) },      // bar-chart: heading
-    { name: 'whoosh', at: per(2, 0.18) },   // bar-chart: cột 1 mọc
-    { name: 'pop', at: per(2, 0.38) },      // bar-chart: cột 2
-    { name: 'pop', at: per(2, 0.58) },      // bar-chart: cột 3
-    { name: 'whoosh', at: per(3, 0.12) },   // line-chart: vẽ đường
-    { name: 'pop', at: per(3, 0.28) },      // line-chart: điểm T1
-    { name: 'pop', at: per(3, 0.46) },      // line-chart: điểm giữa
-    { name: 'pop', at: per(3, 0.64) },      // line-chart: điểm cuối
-    { name: 'whoosh', at: per(4, 0.03) },   // number-counter: số xuất hiện
-    { name: 'chime', at: per(4, 0.45) },    // number-counter: caption hiện
-    { name: 'whoosh', at: per(5, 0.1) },    // comparison: thẻ trái
-    { name: 'pop', at: per(5, 0.18) },      // comparison: thẻ phải
-    { name: 'pop', at: per(5, 0.42) },      // comparison: dòng item đầu
-    { name: 'pop', at: per(5, 0.56) },      // comparison: dòng item giữa
-    { name: 'pop', at: per(5, 0.7) },       // comparison: dòng item cuối
-    { name: 'chime', at: per(6, 0.08) },    // quote: mở đầu câu trích
-    { name: 'whoosh', at: per(7, 0.03) },   // outro: heading hiện
-    { name: 'chime', at: per(7, 0.35) },    // outro: handle hiện
-  ];
+  const SFX_PLAN = [];
+  manifest.entries.forEach((e) => {
+    const rules = SFX_RULES[e.type] || [];
+    for (const r of rules) {
+      SFX_PLAN.push({ name: r.name, at: e.start + e.duration * r.frac });
+    }
+  });
   console.log('Tạo SFX (' + SFX_PLAN.length + ' hiệu ứng)...');
   const sfxFiles = {};
   manifest.sfx = [];
