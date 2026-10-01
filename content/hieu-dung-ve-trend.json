@@ -21,86 +21,83 @@
     {
       "type": "title",
       "badge": "Góc nhìn VN Trend",
-      "heading": "Đừng đoán đỉnh đáy",
-      "highlight": "đỉnh đáy",
-      "subheading": "Sức mạnh của việc đi theo xu hướng",
+      "heading": "Đừng chống lại dòng tiền",
+      "highlight": "dòng tiền",
+      "subheading": "Bí kíp nương theo xu hướng thị trường",
       "duration": 4.5,
-      "narration": "Đừng cố đoán đỉnh hay dò đáy khi đầu tư chứng khoán."
+      "narration": "Đừng bao giờ chống lại dòng tiền lớn. Hãy học cách nương theo xu hướng thị trường để bảo vệ tài khoản."
     },
     {
       "type": "bullets",
-      "heading": "Tâm lý hay gặp",
+      "heading": "Trend Following là gì",
       "items": [
-        "Thích bắt đáy khi giảm sâu",
-        "Sợ hãi khi thấy giá tăng mạnh",
-        "Bỏ lỡ cơ hội vì đứng ngoài"
+        "Không đoán đỉnh đáy",
+        "Mua khi xu hướng tăng rõ",
+        "Thuận theo dòng tiền lớn",
+        "Giảm thiểu rủi ro bắt đáy"
       ],
       "duration": 6.5,
-      "narration": "Nhà đầu tư mới thường thích bắt đáy khi giá giảm sâu, rồi lại sợ hãi khi thị trường tăng mạnh và bỏ lỡ cơ hội."
+      "narration": "Trend following nghĩa là không đoán đỉnh đoán đáy. Ta mua khi xu hướng tăng đã rõ, thuận theo dòng tiền lớn và tránh bắt dao rơi."
     },
     {
       "type": "comparison",
-      "heading": "Hai góc nhìn khác nhau",
+      "heading": "Tư duy giao dịch",
       "left": {
-        "title": "Bắt đáy",
+        "title": "Nhà đầu tư mới",
         "items": [
-          "Rủi ro lớn",
-          "Chờ đợi mệt mỏi",
-          "Dễ sai lầm"
+          "Thích bắt đáy rẻ",
+          "Sợ cổ phiếu tăng cao",
+          "Thua lỗ liên tục"
         ]
       },
       "right": {
-        "title": "Theo xu hướng",
+        "title": "Trend follower",
         "items": [
-          "Xác suất cao hơn",
-          "Thuận tự nhiên",
-          "Quản trị tốt"
+          "Mua khi phá kháng cự",
+          "Nắm giữ khi có lãi",
+          "Quản trị vốn chặt"
         ]
       },
-      "duration": 7.0,
-      "narration": "Bắt đáy mang lại rủi ro lớn và chờ đợi mệt mỏi. Trong khi đó, đi theo xu hướng có xác suất cao hơn và dễ quản trị."
+      "duration": 7.5,
+      "narration": "Nhà đầu tư mới thường thích bắt đáy rẻ và sợ cổ phiếu tăng cao. Trong khi đó, người theo xu hướng lại mua khi giá phá kháng cự và nắm giữ khi có lãi."
     },
     {
-      "type": "bar-chart",
-      "heading": "Hiệu suất minh hoạ",
-      "unit": "%",
+      "type": "line-chart",
+      "heading": "Sức mạnh của xu hướng",
       "data": [
         {
-          "label": "Bắt đáy",
-          "value": 45
+          "label": "Tháng một",
+          "value": 10
         },
         {
-          "label": "Theo trend",
-          "value": 85
+          "label": "Tháng hai",
+          "value": 18
+        },
+        {
+          "label": "Tháng ba",
+          "value": 25
+        },
+        {
+          "label": "Tháng tư",
+          "value": 42
         }
       ],
-      "duration": 5.5,
-      "narration": "Nhìn vào biểu đồ minh hoạ, phương pháp đi theo xu hướng thường mang lại kết quả ổn định hơn nhiều."
-    },
-    {
-      "type": "bullets",
-      "heading": "Cách làm đơn giản",
-      "items": [
-        "Xác định xu hướng lớn",
-        "Chờ dòng tiền xác nhận",
-        "Tuân thủ điểm dừng lỗ"
-      ],
       "duration": 6.0,
-      "narration": "Cách làm rất đơn giản, hãy xác định xu hướng lớn, chờ dòng tiền xác nhận và luôn tuân thủ điểm dừng lỗ."
+      "narration": "Khi một con sóng tăng hình thành từ mười lên đến bốn mươi hai điểm, việc kiên nhẫn đi theo xu hướng sẽ mang lại thành quả lớn hơn việc đoán non đoán già."
     },
     {
       "type": "quote",
-      "text": "Xu hướng là bạn của bạn cho đến khi nó đảo chiều.",
+      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
       "source": "VN Trend",
-      "duration": 5.0,
-      "narration": "Hãy nhớ câu nói kinh điển, xu hướng là bạn của bạn cho đến khi nó đảo chiều."
+      "duration": 4.5,
+      "narration": "Hãy nhớ câu nói kinh điển: xu hướng là bạn của chúng ta cho đến khi nó thực sự đảo chiều."
     },
     {
       "type": "outro",
-      "heading": "Góc nhìn cá nhân theo phương pháp trend following",
+      "heading": "Góc nhìn theo phương pháp trend following",
       "handle": "@VNTrend",
       "duration": 5.0,
-      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Theo dõi VN Trend để cập nhật mỗi ngày."
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Hãy theo dõi VN Trend để cập nhật thêm nhiều kiến thức hay."
     }
   ],
   "transition": {
