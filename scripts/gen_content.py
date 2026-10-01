@@ -110,7 +110,44 @@ def extract_json(text):
     return json.loads(m.group(0))
 
 
-def generate(topic):
+MAX_FIX_ATTEMPTS = 3  # theo đúng khuyến nghị trong docs/sinh-noi-dung-voi-gemini.md
+                      # ("thường 1-2 lượt là đạt") — để dư 1 lượt cho chắc.
+
+VALIDATE_JS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "validate.js")
+
+
+def validate_json_file(path):
+    """Gọi ĐÚNG script validate.js của chính dự án (không viết lại logic riêng ở
+    Python, tránh 2 nơi kiểm tra lệch nhau) — trả về (hợp_lệ, log_đầy_đủ)."""
+    import subprocess
+
+    result = subprocess.run(
+        ["node", VALIDATE_JS, path],
+        capture_output=True,
+        text=True,
+    )
+    full_output = (result.stdout or "") + (result.stderr or "")
+    return result.returncode == 0, full_output.strip()
+
+
+def _call_model(client, model_name, history):
+    response = client.models.generate_content(
+        model=model_name,
+        contents=history,
+        config=types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT),
+    )
+    text = (response.text or "").strip()
+    if not text:
+        raise ValueError("Model trả về nội dung rỗng")
+    return text
+
+
+def generate(topic, tmp_path):
+    """Sinh content.json, rồi TỰ VALIDATE bằng đúng scripts/validate.js của dự án;
+    nếu lỗi, gửi lại y nguyên lỗi cho Gemini (cùng model, cùng cuộc hội thoại) để
+    sửa — lặp tối đa MAX_FIX_ATTEMPTS lần trước khi chịu thua. `tmp_path` dùng để
+    ghi file tạm mỗi vòng lặp (validate.js cần đọc từ file, không nhận JSON qua
+    stdin)."""
     api_key = os.environ["GEMINI_API_KEY"]
     client = genai.Client(api_key=api_key)
     user_prompt = (
@@ -122,24 +159,61 @@ def generate(topic):
             "thuộc như 'cắt lỗ là gì')"
         )
     )
+
     last_error = None
     for model_name in MODEL_FALLBACK_CHAIN:
+        history = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
         try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=user_prompt,
-                config=types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT),
-            )
-            text = (response.text or "").strip()
-            if not text:
-                raise ValueError("Model trả về nội dung rỗng")
-            data = extract_json(text)
-            log(f"[info] Dùng model: {model_name}")
-            return data
+            text = _call_model(client, model_name, history)
         except Exception as e:
-            log(f"[warn] Model {model_name} lỗi: {e}")
+            log(f"[warn] Model {model_name} lỗi ngay từ đầu: {e}")
             last_error = e
             continue
+
+        log(f"[info] Dùng model: {model_name}")
+        history.append(types.Content(role="model", parts=[types.Part(text=text)]))
+
+        for attempt in range(1, MAX_FIX_ATTEMPTS + 1):
+            try:
+                data = extract_json(text)
+            except Exception as e:
+                log(f"[warn] Không bóc được JSON (lần {attempt}): {e}")
+                data = None
+
+            if data is not None:
+                with open(tmp_path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                ok, validate_log = validate_json_file(tmp_path)
+                if ok:
+                    if attempt > 1:
+                        log(f"[info] Đã tự sửa thành công sau {attempt} lần.")
+                    return data
+                log(f"[warn] validate.js báo lỗi (lần {attempt}/{MAX_FIX_ATTEMPTS}):\n{validate_log}")
+            else:
+                validate_log = "Không bóc được JSON hợp lệ từ phản hồi trước — hãy trả lại ĐÚNG MỘT khối JSON duy nhất."
+
+            if attempt == MAX_FIX_ATTEMPTS:
+                break  # hết lượt, thoát vòng lặp fix, rớt xuống thử model tiếp theo
+
+            fix_prompt = (
+                "Nội dung JSON bạn vừa tạo bị lỗi khi chạy qua trình kiểm tra của dự án:\n\n"
+                f"{validate_log}\n\n"
+                "Hãy sửa đúng những lỗi trên và trả lại TOÀN BỘ JSON đã sửa (giữ nguyên "
+                "mọi phần không liên quan tới lỗi) — chỉ MỘT khối JSON duy nhất, không "
+                "markdown, không giải thích gì thêm."
+            )
+            history.append(types.Content(role="user", parts=[types.Part(text=fix_prompt)]))
+            try:
+                text = _call_model(client, model_name, history)
+            except Exception as e:
+                log(f"[warn] Model {model_name} lỗi khi đang sửa (lần {attempt}): {e}")
+                last_error = e
+                break
+            history.append(types.Content(role="model", parts=[types.Part(text=text)]))
+
+        log(f"[warn] Model {model_name} vẫn lỗi sau {MAX_FIX_ATTEMPTS} lần sửa, chuyển model khác.")
+        last_error = last_error or RuntimeError("Hết lượt tự sửa mà vẫn không hợp lệ")
+
     raise RuntimeError(f"Tất cả model trong MODEL_FALLBACK_CHAIN đều lỗi. Lỗi cuối cùng: {last_error}")
 
 
@@ -163,7 +237,8 @@ def main():
     parser.add_argument("--out", default=None, help="Đường dẫn file JSON xuất ra. Mặc định content/<title>.json")
     args = parser.parse_args()
 
-    data = generate(args.topic)
+    tmp_path = "/tmp/gen_content_wip.json"
+    data = generate(args.topic, tmp_path)
 
     title = data.get("meta", {}).get("title", "video-tu-dong")
     out_path = args.out or f"content/{title}.json"
