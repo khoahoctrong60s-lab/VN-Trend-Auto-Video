@@ -1,0 +1,17 @@
+# Phụ thuộc
+node_modules/
+
+# Python venv cho VieNeu-TTS
+.venv-tts/
+
+# Sản phẩm render
+output/
+
+# File tạm
+*.log
+*.tmp
+assets/audio/.vieneu-jobs.json
+
+# File hệ điều hành
+.DS_Store
+Thumbs.db
