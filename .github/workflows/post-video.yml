@@ -5,6 +5,10 @@ name: Tạo và đăng video VN Trend
 # Page. Vì repo này PUBLIC, Actions ở đây KHÔNG tính vào giới hạn phút miễn
 # phí 2.000 phút/tháng của GitHub (chỉ áp dụng cho repo Private).
 
+permissions:
+  contents: write  # repo mới tạo mặc định chỉ cấp quyền đọc cho GITHUB_TOKEN;
+                    # cần khai báo rõ quyền ghi thì bước commit/push mới chạy được.
+
 on:
   schedule:
     # 1 lần/tuần, tối Thứ 5, 20:00 giờ Việt Nam (UTC+7) = 13:00 UTC. Bắt đầu
