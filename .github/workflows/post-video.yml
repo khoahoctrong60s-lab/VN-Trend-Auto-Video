@@ -81,6 +81,15 @@ jobs:
           echo "Video: $VIDEO_PATH ($(du -h "$VIDEO_PATH" | cut -f1))"
           echo "video_path=$VIDEO_PATH" >> "$GITHUB_OUTPUT"
 
+      - name: Lưu video thành artifact để tải về xem thử (giữ 7 ngày)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: output/*.mp4
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Đăng video lên Facebook Page
         env:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
