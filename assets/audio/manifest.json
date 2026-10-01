@@ -1,0 +1,196 @@
+{
+  "total": 46,
+  "voice": "Thùy Dung",
+  "entries": [
+    {
+      "scene": 0,
+      "type": "title",
+      "start": 0,
+      "duration": 5,
+      "file": "narration-00.mp3",
+      "narrStart": 0.3,
+      "narrDur": 4.2
+    },
+    {
+      "scene": 1,
+      "type": "bullets",
+      "start": 5,
+      "duration": 7,
+      "file": "narration-01.mp3",
+      "narrStart": 5.3,
+      "narrDur": 6.74
+    },
+    {
+      "scene": 2,
+      "type": "bar-chart",
+      "start": 12,
+      "duration": 5.5,
+      "file": "narration-02.mp3",
+      "narrStart": 12.3,
+      "narrDur": 5.16
+    },
+    {
+      "scene": 3,
+      "type": "line-chart",
+      "start": 17.5,
+      "duration": 6.5,
+      "file": "narration-03.mp3",
+      "narrStart": 17.8,
+      "narrDur": 5.95
+    },
+    {
+      "scene": 4,
+      "type": "number-counter",
+      "start": 24,
+      "duration": 4,
+      "file": "narration-04.mp3",
+      "narrStart": 24.3,
+      "narrDur": 2.83
+    },
+    {
+      "scene": 5,
+      "type": "comparison",
+      "start": 28,
+      "duration": 8.5,
+      "file": "narration-05.mp3",
+      "narrStart": 28.3,
+      "narrDur": 7.7
+    },
+    {
+      "scene": 6,
+      "type": "quote",
+      "start": 36.5,
+      "duration": 6,
+      "file": "narration-06.mp3",
+      "narrStart": 36.8,
+      "narrDur": 3.86
+    },
+    {
+      "scene": 7,
+      "type": "outro",
+      "start": 42.5,
+      "duration": 3.5,
+      "file": "narration-07.mp3",
+      "narrStart": 42.8,
+      "narrDur": 2.42
+    }
+  ],
+  "music": "music.mp3",
+  "sfx": [
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 0.05,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 6,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 6.28,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 7.19,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 8.1,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 12.774999999999999,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 12.94,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 14.04,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 15.139999999999999,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 18.23,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 19.27,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 20.44,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 21.61,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 24.07,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-chime.mp3",
+      "at": 25.75,
+      "volume": 0.5
+    },
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 28.8,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 29.48,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 31.52,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 32.71,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-pop.mp3",
+      "at": 33.900000000000006,
+      "volume": 0.9
+    },
+    {
+      "file": "sfx-chime.mp3",
+      "at": 36.93,
+      "volume": 0.5
+    },
+    {
+      "file": "sfx-whoosh.mp3",
+      "at": 42.555,
+      "volume": 0.7
+    },
+    {
+      "file": "sfx-chime.mp3",
+      "at": 43.675000000000004,
+      "volume": 0.5
+    }
+  ]
+}

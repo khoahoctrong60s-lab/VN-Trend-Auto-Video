@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "sang-thoi-gian-quan-trong",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "duration": 3,
+      "badge": "SỨC KHỎE",
+      "heading": "Đi ngủ sớm hơn 30 phút",
+      "highlight": ["30 phút"],
+      "subheading": "Lợi ích sau 1 tháng"
+    },
+    {
+      "type": "bullets",
+      "duration": 5,
+      "heading": "Điều gì thay đổi",
+      "items": [
+        "Tỉnh táo hơn vào buổi sáng",
+        "Tập trung sâu hơn khi làm việc",
+        "Ít thèm ăn vặt buổi tối"
+      ]
+    },
+    {
+      "type": "line-chart",
+      "duration": 5,
+      "heading": "Mức năng lượng cảm nhận",
+      "unit": "điểm",
+      "data": [
+        { "label": "Tuần 1", "value": 5 },
+        { "label": "Tuần 2", "value": 6.5 },
+        { "label": "Tuần 3", "value": 7.5 },
+        { "label": "Tuần 4", "value": 8.5 }
+      ]
+    },
+    {
+      "type": "number-counter",
+      "duration": 4,
+      "value": 15,
+      "unit": "giờ",
+      "caption": "Thời gian ngủ bù được sau 1 tháng"
+    },
+    {
+      "type": "outro",
+      "duration": 3,
+      "heading": "Thử ngay tối nay",
+      "handle": "@tenkenh"
+    }
+  ],
+  "transition": { "type": "fade", "duration": 0.4 }
+}

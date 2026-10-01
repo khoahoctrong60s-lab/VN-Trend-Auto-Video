@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "3-buoc-trien-khai",
+    "format": "square",
+    "fps": 30,
+    "theme": "light-clean",
+    "language": "vi"
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "duration": 3,
+      "badge": "QUY TRÌNH LÀM VIỆC",
+      "heading": "3 bước triển khai dự án",
+      "highlight": ["3 bước"],
+      "subheading": "Dành cho team nhỏ"
+    },
+    {
+      "type": "bullets",
+      "duration": 6,
+      "heading": "Làm theo thứ tự",
+      "items": [
+        "Lên kế hoạch và phân công",
+        "Làm thử bản nhỏ trong 1 tuần",
+        "Đo kết quả rồi mới mở rộng"
+      ]
+    },
+    {
+      "type": "comparison",
+      "duration": 5,
+      "heading": "Làm đúng và làm nhanh",
+      "left": {
+        "title": "Làm nhanh",
+        "items": ["Bỏ qua kiểm thử", "Nợ kỹ thuật", "Sửa liên miên"]
+      },
+      "right": {
+        "title": "Làm đúng",
+        "items": ["Kiểm thử đủ", "Tài liệu rõ", "Tăng tốc bền vững"]
+      }
+    },
+    {
+      "type": "number-counter",
+      "duration": 4,
+      "value": 30,
+      "unit": "phút",
+      "caption": "Thời lượng họp tối đa mỗi ngày"
+    },
+    {
+      "type": "outro",
+      "duration": 3,
+      "heading": "Bắt đầu từ hôm nay",
+      "handle": "@tenkenh"
+    }
+  ],
+  "transition": { "type": "fade", "duration": 0.4 }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,"> <!-- chặn yêu cầu favicon.ico gây 404 khi render -->
+<title>Video Template Engine — Player</title>
+<style>
+  /* Font tiếng Việt cục bộ, không tải từ mạng khi render */
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/assets/fonts/be-vietnam-pro-vietnamese-400-normal.woff2') format('woff2'),
+         url('/assets/fonts/be-vietnam-pro-latin-400-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url('/assets/fonts/be-vietnam-pro-vietnamese-700-normal.woff2') format('woff2'),
+         url('/assets/fonts/be-vietnam-pro-latin-700-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-display: block;
+    src: url('/assets/fonts/be-vietnam-pro-vietnamese-800-normal.woff2') format('woff2'),
+         url('/assets/fonts/be-vietnam-pro-latin-800-normal.woff2') format('woff2');
+  }
+
+  html, body { margin: 0; padding: 0; background: #000; }
+  /* Khung video: luôn đúng tỉ lệ, CSS co theo cửa sổ */
+  #video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+  }
+  /* Sân khấu: đúng kích thước video (px), scale bằng transform để
+     toạ độ trong scene luôn khớp thiết kế ở mọi cỡ cửa sổ */
+  #stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+    overflow: hidden;
+  }
+  /* Thanh điều khiển chỉ hiện ở chế độ xem thử (không có ?render=1) */
+  #controls {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    display: none;           /* JS bật lên nếu không phải chế độ render */
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(8, 12, 28, 0.92);
+    color: #e8eefc;
+    font: 13px/1.4 system-ui, sans-serif;
+    z-index: 999;
+    user-select: none;
+  }
+  #controls button {
+    background: #1d2c55; color: #e8eefc; border: 1px solid #3350a0;
+    border-radius: 6px; padding: 5px 12px; cursor: pointer; font: inherit;
+  }
+  #controls button:hover { background: #2a3f7d; }
+  #controls input[type="range"] { flex: 1; }
+  #controls select {
+    background: #1d2c55; color: #e8eefc; border: 1px solid #3350a0;
+    border-radius: 6px; padding: 4px 6px; max-width: 260px;
+  }
+  #controls .time { min-width: 110px; text-align: center; font-variant-numeric: tabular-nums; }
+  /* Thanh tiến trình video mỏng phía trên điều khiển (chỉ xem thử) */
+  #progress {
+    position: fixed;
+    left: 0; right: 0; bottom: 42px;
+    height: 4px;
+    background: rgba(255,255,255,0.12);
+    display: none;
+    z-index: 999;
+  }
+  #progress-fill { height: 100%; width: 0; background: #3ec6ff; }
+</style>
+</head>
+<body>
+  <div id="video-container"><div id="stage"></div></div>
+  <div id="progress"><div id="progress-fill"></div></div>
+  <div id="controls">
+    <button id="btn-mute" type="button">🔊</button>
+    <button id="btn-play" type="button">▶ Play</button>
+    <span id="time" class="time">0.00 / 0.00s</span>
+    <input id="seek" type="range" min="0" max="1000" value="0" step="1">
+    <select id="scene-select"><option>— Chọn scene —</option></select>
+  </div>
+
+  <script src="/engine/easing.js"></script>
+  <script src="/engine/scenes.js"></script>
+  <script src="/engine/engine.js"></script>
+</body>
+</html>

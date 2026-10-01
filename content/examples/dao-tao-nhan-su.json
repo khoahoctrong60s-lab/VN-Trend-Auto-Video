@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "dao-tao-nhan-su",
+    "format": "horizontal",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "duration": 3,
+      "badge": "PHÁT TRIỂN ĐỘI NGŨ",
+      "heading": "Đầu tư đào tạo nhân sự",
+      "highlight": ["đào tạo"],
+      "subheading": "Vì sao nên chi tiền cho học tập"
+    },
+    {
+      "type": "bar-chart",
+      "duration": 5,
+      "heading": "Chi phí nghỉ việc so với đào tạo",
+      "unit": "triệu",
+      "data": [
+        { "label": "Tuyển mới", "value": 90 },
+        { "label": "Đào tạo lại", "value": 35 },
+        { "label": "Đào tạo trước", "value": 15 }
+      ]
+    },
+    {
+      "type": "line-chart",
+      "duration": 5,
+      "heading": "Năng suất sau đào tạo",
+      "unit": "%",
+      "data": [
+        { "label": "Q1", "value": 100 },
+        { "label": "Q2", "value": 112 },
+        { "label": "Q3", "value": 124 },
+        { "label": "Q4", "value": 141 }
+      ]
+    },
+    {
+      "type": "quote",
+      "duration": 4,
+      "text": "Huấn luyện người giỏi giữ chân được cả đội.",
+      "source": "Sách quản trị đội nhóm"
+    },
+    {
+      "type": "outro",
+      "duration": 3,
+      "heading": "Theo dõi kênh quản trị",
+      "handle": "@tenkenh"
+    }
+  ],
+  "transition": { "type": "fade", "duration": 0.4 }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "video-template-engine",
+  "version": "1.0.0",
+  "description": "Hệ thống template video tự động: JSON -> HTML animation -> MP4",
+  "type": "commonjs",
+  "scripts": {
+    "render": "node scripts/render.js",
+    "render:all": "node scripts/render-all.js",
+    "validate": "node scripts/validate.js",
+    "gen-audio": "node scripts/gen-audio.js",
+    "check:determinism": "node scripts/check-determinism.js",
+    "preview": "node scripts/preview.js"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "msedge-tts": "^2.0.8",
+    "puppeteer": "^24.0.0"
+  }
+}

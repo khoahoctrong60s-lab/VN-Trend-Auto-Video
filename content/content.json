@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "quy-tac-50-30-20",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "dark-navy",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "vieneu",
+      "voice": "Thùy Dung",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "duration": 5,
+      "badge": "QUẢN LÝ TÀI CHÍNH",
+      "heading": "Quy tắc 50/30/20 cho tiền lương",
+      "highlight": ["50/30/20"],
+      "subheading": "Chia tiền đơn giản trong 30 giây",
+      "narration": "Muốn quản lý lương hiệu quả? Hãy nhớ ngay quy tắc năm mươi, ba mươi, hai mươi."
+    },
+    {
+      "type": "bullets",
+      "duration": 7,
+      "heading": "Chia lương thành 3 phần",
+      "items": [
+        "50% cho nhu cầu thiết yếu",
+        "30% cho sở thích cá nhân",
+        "20% cho tiết kiệm và đầu tư"
+      ],
+      "narration": "Chia lương làm ba phần: năm mươi phần trăm cho nhu cầu thiết yếu, ba mươi phần trăm cho sở thích cá nhân, hai mươi phần trăm cho tiết kiệm và đầu tư."
+    },
+    {
+      "type": "bar-chart",
+      "duration": 5.5,
+      "heading": "Ví dụ với lương 20 triệu",
+      "unit": "triệu",
+      "data": [
+        { "label": "Thiết yếu", "value": 10 },
+        { "label": "Sở thích", "value": 6 },
+        { "label": "Tiết kiệm", "value": 4 }
+      ],
+      "narration": "Lấy ví dụ lương hai mươi triệu: mười triệu cho thiết yếu, sáu triệu cho sở thích, bốn triệu còn lại để tiết kiệm."
+    },
+    {
+      "type": "line-chart",
+      "duration": 6.5,
+      "heading": "Tiết kiệm cộng dồn theo tháng",
+      "unit": "triệu",
+      "data": [
+        { "label": "T1", "value": 4 },
+        { "label": "T3", "value": 12 },
+        { "label": "T6", "value": 24 },
+        { "label": "T9", "value": 36 },
+        { "label": "T12", "value": 48 }
+      ],
+      "narration": "Tiết kiệm cộng dồn rất nhanh: tháng đầu bốn triệu, tháng thứ sáu hai mươi bốn triệu, tới tháng thứ mười hai là bốn mươi tám triệu."
+    },
+    {
+      "type": "number-counter",
+      "duration": 4,
+      "value": 48,
+      "unit": "triệu đồng",
+      "caption": "Số tiền tiết kiệm được sau 1 năm",
+      "narration": "Bốn mươi tám triệu — kết quả của việc để dành đều đặn mỗi tháng."
+    },
+    {
+      "type": "comparison",
+      "duration": 8.5,
+      "heading": "Có kế hoạch và không có kế hoạch",
+      "left": {
+        "title": "Không kế hoạch",
+        "items": ["Hết tiền cuối tháng", "Không có quỹ dự phòng", "Hay vay nóng"]
+      },
+      "right": {
+        "title": "Theo 50/30/20",
+        "items": ["Chi tiêu rõ ràng", "Có quỹ dự phòng", "Tiền tích lũy đều đặn"]
+      },
+      "narration": "Không kế hoạch thì cuối tháng hết tiền, không có quỹ dự phòng, hay vay nóng. Ngược lại, có kế hoạch: chi tiêu rõ ràng, quỹ dự phòng vững, tích lũy đều đặn."
+    },
+    {
+      "type": "quote",
+      "duration": 6,
+      "text": "Hãy trả cho chính mình trước, rồi mới chi tiêu phần còn lại.",
+      "source": "Nguyên tắc tiết kiệm cơ bản",
+      "narration": "Nguyên tắc cốt lõi: hãy trả cho chính mình trước, rồi mới chi tiêu phần còn lại."
+    },
+    {
+      "type": "outro",
+      "duration": 3.5,
+      "heading": "Lưu lại để áp dụng từ tháng này",
+      "handle": "@tenkenh",
+      "narration": "Lưu lại video này và áp dụng ngay từ tháng này nhé!"
+    }
+  ],
+  "transition": { "type": "slide-up", "duration": 0.4 }
+}
