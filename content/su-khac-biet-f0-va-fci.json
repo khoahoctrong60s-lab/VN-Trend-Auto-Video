@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "su-khac-biet-f0-va-fci",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "vn-trend",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Đọc vị dòng tiền thông minh",
+      "subheading": "Bí quyết nhận diện sóng ngành chuẩn xác",
+      "highlight": [
+        "dòng tiền"
+      ],
+      "duration": 4.5,
+      "narration": "Đọc vị dòng tiền thông minh là chìa khóa để nhận diện sóng ngành chuẩn xác trên thị trường."
+    },
+    {
+      "type": "comparison",
+      "heading": "Nhà đầu tư mới và chuyên nghiệp",
+      "left": {
+        "title": "Mới tham gia",
+        "items": [
+          "Mua theo tin đồn",
+          "Nhìn giá xanh đỏ",
+          "Sợ hãi khi giảm"
+        ]
+      },
+      "right": {
+        "title": "Dòng tiền lớn",
+        "items": [
+          "Bám theo xu hướng",
+          "Đo lường thanh khoản",
+          "Mua khi tích lũy"
+        ]
+      },
+      "duration": 6.5,
+      "narration": "Nhà đầu tư mới thường mua theo tin đồn và nhìn giá xanh đỏ, trong khi dòng tiền lớn bám theo xu hướng và đo lường thanh khoản."
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Thanh khoản theo giai đoạn thị trường",
+      "unit": "tỷ VNĐ",
+      "data": [
+        {
+          "label": "Giai đoạn đi ngang",
+          "value": 10000
+        },
+        {
+          "label": "Phiên breakout",
+          "value": 25000
+        },
+        {
+          "label": "Nhịp tăng chính",
+          "value": 35000
+        }
+      ],
+      "duration": 7.0,
+      "narration": "Thanh khoản nhảy vọt từ mười nghìn tỷ trong giai đoạn đi ngang lên hai mươi lăm nghìn tỷ ở phiên breakout, và đạt ba mươi lăm nghìn tỷ khi vào nhịp tăng chính."
+    },
+    {
+      "type": "bullets",
+      "heading": "Ba bước bắt sóng hiệu quả",
+      "items": [
+        "Tìm ngành dẫn dắt",
+        "Chờ điểm tích lũy",
+        "Đi theo xu hướng lớn"
+      ],
+      "duration": 6.0,
+      "narration": "Ba bước bắt sóng hiệu quả gồm tìm ngành dẫn dắt, chờ điểm tích lũy và đi theo xu hướng lớn của thị trường."
+    },
+    {
+      "type": "quote",
+      "heading": "Quy tắc cốt lõi",
+      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "quote": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "source": "VN Trend",
+      "duration": 5.0,
+      "narration": "Hãy nhớ quy tắc cốt lõi: Xu hướng là bạn cho đến khi nó đảo chiều."
+    },
+    {
+      "type": "outro",
+      "heading": "Góc nhìn cá nhân theo phương pháp trend following.",
+      "subheading": "Theo dõi VN Trend để cập nhật thông tin tài chính hữu ích.",
+      "handle": "@VNTrend",
+      "duration": 5.5,
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Theo dõi VN Trend nhé."
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
