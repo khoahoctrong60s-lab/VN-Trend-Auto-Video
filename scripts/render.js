@@ -193,6 +193,12 @@ async function main() {
       '-framerate', String(fps),
       '-i', path.join(framesDir, 'frame_%05d.' + (args.jpeg ? 'jpg' : 'png')),
     ];
+    let nextInputIndex = 1; // input 0 = chuỗi khung hình; tăng dần mỗi khi thêm -i mới
+    // Gom các đoạn filter (audio lẫn video) vào đây rồi mới ghép + push 1 LẦN DUY NHẤT
+    // ở cuối — vì FFmpeg chỉ chấp nhận đúng 1 cờ -filter_complex cho cả lệnh.
+    const filterParts = [];
+    let videoMapLabel = '0:v';
+    let audioMapLabel = null;
 
     // ---- Audio: tự tạo nếu thiếu, rồi trộn nhạc nền + lời đọc + SFX ---------------
     const audioCfg = content.audio || {};
@@ -253,25 +259,55 @@ async function main() {
       }
 
       // Giai đoạn 2: video + nhạc nền + overdub → track cuối
+      const musicIdx = nextInputIndex++;
       ffArgs.push('-stream_loop', '-1', '-i', path.join(audioDir, 'music.mp3'));
-      if (ai > 0) ffArgs.push('-i', overDub);
-      const musicFilter = '[1:a]aresample=44100,aformat=channel_layouts=mono,' +
+      let overDubIdx = null;
+      if (ai > 0) {
+        overDubIdx = nextInputIndex++;
+        ffArgs.push('-i', overDub);
+      }
+      const musicFilter = '[' + musicIdx + ':a]aresample=44100,aformat=channel_layouts=mono,' +
         'atrim=0:' + total.toFixed(3) + ',volume=' + mv +
         (fadeOut > 0 ? ',afade=t=out:st=' + Math.max(0, total - fadeOut).toFixed(2) +
           ':d=' + fadeOut.toFixed(2) : '');
-      if (ai > 0) {
-        ffArgs.push('-filter_complex',
+      if (overDubIdx != null) {
+        filterParts.push(
           musicFilter + '[m0]' +
-          ';[2:a]atrim=0:' + total.toFixed(3) + '[o0]' +
+          ';[' + overDubIdx + ':a]atrim=0:' + total.toFixed(3) + '[o0]' +
           ';[m0][o0]amix=inputs=2:duration=first:normalize=0,' +
-          'aformat=sample_rates=44100:channel_layouts=mono[aout]',
-          '-map', '0:v', '-map', '[aout]');
+          'aformat=sample_rates=44100:channel_layouts=mono[aout]'
+        );
       } else {
-        ffArgs.push('-filter_complex', musicFilter + '[aout]',
-          '-map', '0:v', '-map', '[aout]');
+        filterParts.push(musicFilter + '[aout]');
       }
+      audioMapLabel = '[aout]';
       hasAudioTrack = true;
     }
+
+    // ---- Logo watermark VN Trend (overlay FFmpeg, áp dụng cho MỌI video, kể cả
+    // video không có audio) — ảnh đã được xử lý nền trong suốt sẵn (assets/brand/).
+    const logoPath = path.join(ROOT, 'assets', 'brand', 'logo-watermark.png');
+    if (fs.existsSync(logoPath)) {
+      const logoIdx = nextInputIndex++;
+      ffArgs.push('-i', logoPath);
+      // Khớp đúng bảng format -> kích thước mà engine.js (phía trình duyệt) dùng —
+      // render.js (phía Node) không có sẵn biến width/height nào ở scope này.
+      const FORMAT_DIMS = { vertical: [1080, 1920], horizontal: [1920, 1080], square: [1080, 1080] };
+      const [videoWidth] = FORMAT_DIMS[content.meta.format] || FORMAT_DIMS.vertical;
+      // Logo rộng ~14% chiều ngang video, neo góc dưới phải, cách lề 40px.
+      const logoW = Math.round(videoWidth * 0.14);
+      filterParts.push(
+        '[' + logoIdx + ':v]scale=' + logoW + ':-1[logo]' +
+        ';[0:v][logo]overlay=x=W-w-40:y=H-h-40:format=auto[vout]'
+      );
+      videoMapLabel = '[vout]';
+    }
+
+    if (filterParts.length > 0) {
+      ffArgs.push('-filter_complex', filterParts.join(';'));
+    }
+    ffArgs.push('-map', videoMapLabel);
+    if (audioMapLabel) ffArgs.push('-map', audioMapLabel);
 
     ffArgs.push(
       '-c:v', 'libx264',

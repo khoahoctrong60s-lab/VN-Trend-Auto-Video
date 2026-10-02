@@ -52,7 +52,7 @@ Yêu cầu schema bắt buộc (đúng từng trường, engine sẽ từ chối
     "title": "<slug-ngan-khong-dau-khoang>",
     "format": "vertical",
     "fps": 30,
-    "theme": "dark-navy",
+    "theme": "vn-trend",
     "language": "vi"
   },
   "audio": {
@@ -70,7 +70,8 @@ Yêu cầu schema bắt buộc (đúng từng trường, engine sẽ từ chối
 
 QUAN TRỌNG: trường "audio.narration.provider" LUÔN LUÔN là "edge", "voice" LUÔN
 LUÔN là "vi-VN-HoaiMyNeural" — không được đổi sang "vieneu" hay giọng khác dù
-chủ đề là gì.
+chủ đề là gì. Tương tự, "meta.theme" LUÔN LUÔN là "vn-trend" — không dùng
+"dark-navy" hay theme nào khác.
 
 Quy tắc nội dung:
 - Mở đầu bằng scene "title": có "badge", "heading" (≤ 40 ký tự), "subheading",
@@ -87,9 +88,25 @@ Quy tắc nội dung:
 - Narration phải ĐI QUA TỪNG ĐIỂM hiển thị trên màn hình (mọi con số, mọi dòng
   bullet, cả 2 bên comparison).
 - bullets: 2-6 dòng, mỗi dòng ≤ 30 ký tự. comparison: left.items/right.items
-  2-4 dòng, mỗi dòng ≤ 24 ký tự. bar-chart/line-chart: 3-6 điểm dữ liệu MINH
-  HOẠ hợp lý với chủ đề — đây là nội dung kiến thức minh hoạ, KHÔNG phải số
-  liệu giao dịch thật, không gắn số liệu đó với 1 mã cổ phiếu cụ thể nào.
+  2-4 dòng, mỗi dòng ≤ 24 ký tự.
+- bar-chart/line-chart: schema bắt buộc {"heading", "unit", "data": [{"label",
+  "value"}, ...]} với 3-6 điểm. BẮT BUỘC 3 thứ này phải KHỚP NHAU THÀNH 1 CÂU
+  CHUYỆN DUY NHẤT — "heading" nêu rõ đang đo cái gì, "label" của từng điểm là
+  tên giai đoạn/mốc thời gian/nhóm CÓ Ý NGHĨA (không dùng "A, B, C" hay nhãn
+  chung chung), và "narration" của scene đó PHẢI NÊU RÕ xu hướng/so sánh mà
+  chính các "value" thể hiện (tăng từ đâu đến đâu, cái nào cao hơn cái nào và
+  vì sao điều đó quan trọng) — người xem phải hiểu được biểu đồ đang chứng minh
+  điều gì chỉ qua lời đọc, không chỉ nhìn số.
+  Ví dụ ĐÚNG: heading "Khối lượng giao dịch 3 phiên", unit "triệu CP", data
+  [{"label":"Phiên tích lũy","value":12},{"label":"Phiên breakout","value":45},
+  {"label":"Phiên xác nhận","value":28}], narration "Khối lượng vọt từ mười
+  hai lên bốn mươi lăm triệu cổ phiếu đúng phiên breakout — dấu hiệu dòng tiền
+  lớn nhập cuộc."
+  Ví dụ SAI (không được làm): data [{"label":"A","value":50},{"label":"B",
+  "value":30},{"label":"C","value":20}] mà narration chỉ nói chung chung
+  không nhắc gì tới 50/30/20 hay ý nghĩa của A/B/C.
+  Đây là nội dung kiến thức minh hoạ, KHÔNG phải số liệu giao dịch thật, không
+  gắn số liệu đó với 1 mã cổ phiếu cụ thể nào.
 - Scene "quote": câu ngắn có trọng lượng, kèm "source": "VN Trend".
 - Tổng thời lượng toàn video 35-60 giây.
 - Không dùng emoji trong heading.
