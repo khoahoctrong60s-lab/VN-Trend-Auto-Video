@@ -1,0 +1,16 @@
+{
+  "colors": {
+    "bg": "#070a16",
+    "text": "#f8fafc",
+    "accent1": "#22e07a",
+    "accent2": "#ff2e87",
+    "accent3": "#5b6bff",
+    "muted": "#8b93b0"
+  },
+  "fonts": {
+    "heading": "Be Vietnam Pro",
+    "body": "Be Vietnam Pro"
+  },
+  "sizes": { "h1": 96, "h2": 64, "body": 44, "caption": 32 },
+  "safeMargin": 80
+}
