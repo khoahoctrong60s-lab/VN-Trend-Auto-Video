@@ -3,7 +3,7 @@
     "title": "su-khac-biet-f0-va-f1",
     "format": "vertical",
     "fps": 30,
-    "theme": "dark-navy",
+    "theme": "vn-trend",
     "language": "vi"
   },
   "audio": {
@@ -21,81 +21,82 @@
     {
       "type": "title",
       "badge": "Góc nhìn VN Trend",
-      "heading": "Sai lầm khi chọn sai phong cách",
-      "subheading": "Bí quyết sống sót cho nhà đầu tư mới",
+      "heading": "Sai lầm khi chọn cổ phiếu",
+      "subheading": "Bí mật từ nhà đầu tư lâu năm",
       "highlight": [
-        "chọn sai phong cách"
+        "cổ phiếu"
       ],
-      "duration": 4.5,
-      "narration": "Sai lầm lớn nhất của nhà đầu tư mới là chọn sai phong cách giao dịch."
-    },
-    {
-      "type": "comparison",
-      "heading": "Lướt sóng hay nắm giữ",
-      "left": {
-        "title": "Đầu cơ",
-        "items": [
-          "Theo từng con sóng",
-          "Dễ bị tâm lý cuốn",
-          "Cần bảng điện liên tục"
-        ]
-      },
-      "right": {
-        "title": "Theo xu hướng",
-        "items": [
-          "Nhìn bức tranh lớn",
-          "Quản trị vốn chặt",
-          "Thảnh thơi đầu óc"
-        ]
-      },
-      "duration": 6.0,
-      "narration": "Đầu cơ theo từng con sóng thường dễ bị tâm lý cuốn đi, trong khi theo xu hướng giúp chúng ta thảnh thơi đầu óc hơn."
+      "narration": "Sai lầm khi chọn cổ phiếu thường gặp nhất của người mới là gì? Cùng xem ngay nhé.",
+      "duration": 4.5
     },
     {
       "type": "bullets",
-      "heading": "Ba bước nhận diện xu hướng",
+      "heading": "Thực trạng F0",
       "items": [
-        "Xác định đỉnh đáy sau cao hơn",
-        "Dùng đường trung bình động",
-        "Kiên nhẫn chờ điểm mua chuẩn"
+        "Mua vì nghe hô hào",
+        "Thích cổ phiếu giá rẻ",
+        "Không xem xu hướng",
+        "Sợ bỏ lỡ cơ hội"
       ],
-      "duration": 5.5,
-      "narration": "Ba bước nhận diện xu hướng gồm xác định đỉnh đáy sau cao hơn, dùng đường trung bình động và kiên nhẫn chờ điểm mua chuẩn."
+      "narration": "Người mới thường mua vì nghe hô hào, thích cổ phiếu giá rẻ dưới mười nghìn đồng, và không thèm quan tâm đến xu hướng thị trường.",
+      "duration": 6.5
+    },
+    {
+      "type": "comparison",
+      "heading": "F0 vs Nhà đầu tư kinh nghiệm",
+      "left": {
+        "title": "F0",
+        "items": [
+          "Bắt dao rơi",
+          "Mua đuổi đỉnh",
+          "Tâm lý hoảng loạn"
+        ]
+      },
+      "right": {
+        "title": "F1",
+        "items": [
+          "Chờ dòng tiền",
+          "Mua theo đà",
+          "Kiểm soát rủi ro"
+        ]
+      },
+      "narration": "F0 hay bắt dao rơi và mua đuổi đỉnh trong hoảng loạn, trong khi nhà đầu tư kinh nghiệm luôn chờ dòng tiền xác nhận và mua theo đà tăng.",
+      "duration": 6.5
     },
     {
       "type": "bar-chart",
-      "heading": "Hiệu suất theo chu kỳ",
+      "heading": "Hiệu suất tài khoản theo phương pháp",
+      "unit": "phần trăm",
       "data": [
         {
-          "label": "Tích lũy",
-          "value": 15
+          "label": "Mua cảm tính",
+          "value": -15
         },
         {
-          "label": "Đẩy giá",
-          "value": 65
+          "label": "Lướt T cộng",
+          "value": 5
         },
         {
-          "label": "Phân phối",
-          "value": 20
+          "label": "Theo xu hướng",
+          "value": 28
         }
       ],
-      "duration": 5.0,
-      "narration": "Giai đoạn đẩy giá luôn chiếm phần lớn lợi nhuận trong một chu kỳ tăng trưởng của thị trường."
+      "narration": "Hiệu suất tài khoản âm mười lăm phần trăm khi mua theo cảm tính, chỉ đạt năm phần trăm với lướt T cộng, nhưng vọt lên hai mươi tám phần trăm khi đi theo đúng xu hướng.",
+      "duration": 7.5
     },
     {
       "type": "quote",
-      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "text": "Thị trường chứng khoán chuyển tiền từ người thiếu kiên nhẫn sang người kiên nhẫn.",
       "source": "VN Trend",
-      "duration": 4.0,
-      "narration": "Hãy nhớ câu nói kinh điển: xu hướng là bạn cho đến khi nó đảo chiều."
+      "narration": "Thị trường chứng khoán luôn chuyển tiền từ người thiếu kiên nhẫn sang người có kỷ luật.",
+      "duration": 4.5
     },
     {
       "type": "outro",
-      "heading": "Giao dịch có kỷ luật",
+      "heading": "Góc nhìn theo phương pháp trend following.",
       "handle": "@VNTrend",
-      "subheading": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
-      "duration": 5.0,
-      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Hẹn gặp lại bạn ở các video sau."
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Nhớ bấm theo dõi VN Trend nhé.",
+      "duration": 6.0
     }
   ],
   "transition": {
