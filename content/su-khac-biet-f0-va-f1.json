@@ -20,83 +20,80 @@
   "scenes": [
     {
       "type": "title",
+      "duration": 4.5,
       "badge": "Góc nhìn VN Trend",
-      "heading": "Sai lầm khi chọn cổ phiếu",
-      "subheading": "Bí mật từ nhà đầu tư lâu năm",
+      "heading": "Vì sao F0 nhanh chán?",
+      "subheading": "Giải mã tư duy đầu tư thực chiến",
       "highlight": [
-        "cổ phiếu"
-      ],
-      "narration": "Sai lầm khi chọn cổ phiếu thường gặp nhất của người mới là gì? Cùng xem ngay nhé.",
-      "duration": 4.5
+        "F0 nhanh chán"
+      ]
     },
     {
       "type": "bullets",
-      "heading": "Thực trạng F0",
+      "duration": 6.5,
+      "heading": "Sai lầm của nhà đầu tư mới",
       "items": [
-        "Mua vì nghe hô hào",
-        "Thích cổ phiếu giá rẻ",
-        "Không xem xu hướng",
-        "Sợ bỏ lỡ cơ hội"
+        "Đoán đỉnh đáy liên tục",
+        "Mong X hai tài khoản nhanh",
+        "Sợ bỏ lỡ mọi con sóng"
       ],
-      "narration": "Người mới thường mua vì nghe hô hào, thích cổ phiếu giá rẻ dưới mười nghìn đồng, và không thèm quan tâm đến xu hướng thị trường.",
-      "duration": 6.5
-    },
-    {
-      "type": "comparison",
-      "heading": "F0 vs Nhà đầu tư kinh nghiệm",
-      "left": {
-        "title": "F0",
-        "items": [
-          "Bắt dao rơi",
-          "Mua đuổi đỉnh",
-          "Tâm lý hoảng loạn"
-        ]
-      },
-      "right": {
-        "title": "F1",
-        "items": [
-          "Chờ dòng tiền",
-          "Mua theo đà",
-          "Kiểm soát rủi ro"
-        ]
-      },
-      "narration": "F0 hay bắt dao rơi và mua đuổi đỉnh trong hoảng loạn, trong khi nhà đầu tư kinh nghiệm luôn chờ dòng tiền xác nhận và mua theo đà tăng.",
-      "duration": 6.5
+      "narration": "Nhà đầu tư mới thường mắc kẹt khi cố gắng đoán đỉnh đáy liên tục, mong tài khoản nhân hai thật nhanh và luôn sợ bỏ lỡ mọi con sóng trên thị trường."
     },
     {
       "type": "bar-chart",
-      "heading": "Hiệu suất tài khoản theo phương pháp",
+      "duration": 7.0,
+      "heading": "Tỷ suất sinh lợi trung bình theo xu hướng",
       "unit": "phần trăm",
       "data": [
         {
-          "label": "Mua cảm tính",
-          "value": -15
-        },
-        {
-          "label": "Lướt T cộng",
+          "label": "Đoán đáy",
           "value": 5
         },
         {
+          "label": "Bắt đỉnh",
+          "value": 2
+        },
+        {
           "label": "Theo xu hướng",
-          "value": 28
+          "value": 22
         }
       ],
-      "narration": "Hiệu suất tài khoản âm mười lăm phần trăm khi mua theo cảm tính, chỉ đạt năm phần trăm với lướt T cộng, nhưng vọt lên hai mươi tám phần trăm khi đi theo đúng xu hướng.",
-      "duration": 7.5
+      "narration": "Nhìn vào biểu đồ, phương pháp đoán đáy chỉ mang lại năm phần trăm, bắt đỉnh vỏn vẹn hai phần trăm, trong khi bám sát xu hướng lớn giúp đạt hai mươi hai phần trăm."
+    },
+    {
+      "type": "comparison",
+      "duration": 7.5,
+      "heading": "Tư duy khác biệt",
+      "left": {
+        "title": "Người mới",
+        "items": [
+          "Thua lỗ vì cãi thị trường",
+          "Mua bán theo cảm xúc",
+          "Nhìn bảng điện từng phút"
+        ]
+      },
+      "right": {
+        "title": "Nhà giao dịch bền",
+        "items": [
+          "Thuận theo dòng tiền",
+          "Tuân thủ kỷ luật vốn",
+          "Kiên nhẫn chờ điểm mua"
+        ]
+      },
+      "narration": "Người mới thường thua lỗ vì cãi thị trường và mua bán theo cảm xúc từng phút. Ngược lại, người giao dịch bền vững luôn thuận theo dòng tiền và kiên nhẫn chờ điểm mua chuẩn."
     },
     {
       "type": "quote",
-      "text": "Thị trường chứng khoán chuyển tiền từ người thiếu kiên nhẫn sang người kiên nhẫn.",
-      "source": "VN Trend",
-      "narration": "Thị trường chứng khoán luôn chuyển tiền từ người thiếu kiên nhẫn sang người có kỷ luật.",
-      "duration": 4.5
+      "duration": 5.5,
+      "text": "Thị trường chứng khoán sinh ra để chuyển tiền từ người thiếu kiên nhẫn sang người kiên nhẫn.",
+      "source": "VN Trend"
     },
     {
       "type": "outro",
-      "heading": "Góc nhìn theo phương pháp trend following.",
-      "handle": "@VNTrend",
-      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Nhớ bấm theo dõi VN Trend nhé.",
-      "duration": 6.0
+      "duration": 5.0,
+      "heading": "Đầu tư là cuộc đua đường dài",
+      "subheading": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "handle": "@VNTrend"
     }
   ],
   "transition": {
