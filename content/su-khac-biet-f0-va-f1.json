@@ -21,81 +21,92 @@
     {
       "type": "title",
       "badge": "Góc nhìn VN Trend",
-      "heading": "Đừng làm F0 mãi nữa",
-      "subheading": "Bí quyết nâng cấp tư duy đầu tư chứng khoán",
+      "heading": "Sai lầm khi chọn sai phong cách đầu tư",
+      "subheading": "Bí quyết để không lạc lối trên thị trường",
       "highlight": [
-        "F0"
+        "sai phong cách đầu tư"
       ],
-      "duration": 4.5,
-      "narration": "Đừng làm F0 mãi nữa. Cùng xem sự khác biệt giữa nhà đầu tư mới và người có kinh nghiệm trên thị trường chứng khoán Việt Nam."
-    },
-    {
-      "type": "comparison",
-      "heading": "Góc nhìn thị trường",
-      "left": {
-        "title": "Nhà đầu tư F0",
-        "items": [
-          "Mua theo cảm xúc",
-          "Thích nghe phím hàng",
-          "Sợ hãi khi giảm mạnh"
-        ]
-      },
-      "right": {
-        "title": "Nhà đầu tư F1",
-        "items": [
-          "Theo dõi dòng tiền",
-          "Tuân thủ kỷ luật",
-          "Xem nhịp chỉnh là cơ hội"
-        ]
-      },
-      "duration": 6.5,
-      "narration": "Nhà đầu tư mới thường mua theo cảm xúc và thích nghe phím hàng. Trong khi đó, nhà đầu tư dày dạn luôn theo dõi dòng tiền và tuân thủ kỷ luật."
+      "narration": "Sai lầm khi chọn sai phong cách đầu tư thường khiến nhà đầu tư mới dễ mất phương hướng.",
+      "duration": 5.5
     },
     {
       "type": "bullets",
-      "heading": "Ba bước nâng cấp bản thân",
+      "heading": "Đặc điểm của nhà đầu tư mới",
       "items": [
-        "Ngừng mua đuổi giá xanh tím",
-        "Học đọc biểu đồ khối lượng",
-        "Xác định rõ xu hướng lớn"
+        "Thích mua theo hội nhóm",
+        "Chờ đợi cổ phiếu hồi phục",
+        "Thiếu chiến lược rõ ràng"
       ],
-      "duration": 5.5,
-      "narration": "Để nâng cấp bản thân, bạn hãy ngừng mua đuổi giá xanh tím, học cách đọc biểu đồ khối lượng và xác định rõ xu hướng lớn của thị trường."
+      "narration": "Nhà đầu tư mới thường có thói quen thích mua theo hội nhóm, chờ đợi cổ phiếu hồi phục và thiếu chiến lược rõ ràng.",
+      "duration": 6.5
+    },
+    {
+      "type": "comparison",
+      "heading": "Đầu cơ và Đầu tư",
+      "left": {
+        "title": "Lướt sóng ngắn",
+        "items": [
+          "Theo dõi bảng điện",
+          "Biến động từng phút",
+          "Rủi ro T cộng"
+        ]
+      },
+      "right": {
+        "title": "Theo xu hướng",
+        "items": [
+          "Bám sát dòng tiền",
+          "Nắm bắt con sóng lớn",
+          "Quản trị vốn chặt"
+        ]
+      },
+      "narration": "Lướt sóng ngắn gắn liền với việc theo dõi bảng điện và rủi ro tê cộng, trong khi theo xu hướng giúp bạn bám sát dòng tiền lớn và nắm bắt con sóng lớn.",
+      "duration": 7.5
     },
     {
       "type": "bar-chart",
-      "heading": "Khối lượng dòng tiền theo xu hướng",
-      "unit": "tỷ VNĐ",
+      "heading": "Hiệu suất theo nhịp thị trường",
+      "unit": "phần trăm",
       "data": [
         {
-          "label": "Giai đoạn đi ngang",
-          "value": 8000
+          "label": "Nhịp dò đáy",
+          "value": 5
         },
         {
-          "label": "Phiên bùng nổ theo đà",
-          "value": 24000
+          "label": "Nhịp xác nhận",
+          "value": 18
         },
         {
-          "label": "Nhịp điều chỉnh nhẹ",
-          "value": 15000
+          "label": "Nhịp bùng nổ",
+          "value": 35
         }
       ],
-      "duration": 6.5,
-      "narration": "Nhìn vào biểu đồ dòng tiền, từ mức tám nghìn tỷ trong giai đoạn đi ngang đã vọt lên hai mươi bốn nghìn tỷ ở phiên bùng nổ, cho thấy dòng tiền lớn luôn để lại dấu vết."
+      "narration": "Hiệu suất tăng từ năm phần trăm ở nhịp dò đáy lên mười tám phần trăm khi có xác nhận, và đạt ba mươi lăm phần trăm ở nhịp bùng nổ nhờ đi theo xu hướng.",
+      "duration": 8.0
     },
     {
       "type": "quote",
-      "text": "Thị trường chứng khoán chuyển tiền từ người thiếu kiên nhẫn sang người có kỷ luật.",
+      "text": "Xu hướng là bạn đồng hành tốt nhất của tài khoản.",
       "source": "VN Trend",
-      "duration": 4.8,
-      "narration": "Nhớ rằng, thị trường chứng khoán luôn chuyển tiền từ người thiếu kiên nhẫn sang người có kỷ luật."
+      "narration": "Thị trường luôn đúng, và xu hướng chính là bạn đồng hành tốt nhất của tài khoản.",
+      "duration": 5.0
+    },
+    {
+      "type": "bullets",
+      "heading": "Ba bước tham gia bền vững",
+      "items": [
+        "Xác định rõ xu hướng lớn",
+        "Chờ điểm mua chuẩn xác",
+        "Tuân thủ kỷ luật dừng lỗ"
+      ],
+      "narration": "Hãy nhớ ba bước tham gia bền vững gồm xác định rõ xu hướng lớn, chờ điểm mua chuẩn xác và tuân thủ kỷ luật dừng lỗ.",
+      "duration": 6.5
     },
     {
       "type": "outro",
-      "heading": "Theo dõi VN Trend. Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "heading": "Phương pháp trend following, không phải khuyến nghị đầu tư",
       "handle": "@VNTrend",
-      "duration": 5.0,
-      "narration": "Theo dõi V N Trend để cập nhật xu hướng chứng khoán mỗi ngày. Lưu ý đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư."
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Hãy theo dõi kênh để cập nhật xu hướng mới.",
+      "duration": 6.5
     }
   ],
   "transition": {
