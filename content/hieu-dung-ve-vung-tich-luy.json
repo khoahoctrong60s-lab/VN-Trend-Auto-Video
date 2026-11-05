@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "hieu-dung-ve-vung-tich-luy",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "vn-trend",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Đọc vị vùng tích lũy cổ phiếu",
+      "subheading": "Bí quyết kiên nhẫn cho nhà đầu tư mới",
+      "highlight": [
+        "vùng tích lũy"
+      ],
+      "duration": 4.5,
+      "narration": "Đọc vị vùng tích lũy cổ phiếu là kỹ năng sống còn giúp bạn không bị rũ bỏ."
+    },
+    {
+      "type": "bullets",
+      "heading": "Tích lũy là gì?",
+      "subheading": "Bản chất của dòng tiền lớn",
+      "bullets": [
+        "Giá đi ngang nhiều tuần",
+        "Thanh khoản thấp dần đều",
+        "Tay to gom hàng âm thầm",
+        "Tạo nền giá siêu vững chắc"
+      ],
+      "items": [
+        "Giá đi ngang nhiều tuần",
+        "Thanh khoản thấp dần đều",
+        "Tay to gom hàng âm thầm",
+        "Tạo nền giá siêu vững chắc"
+      ],
+      "duration": 6.5,
+      "narration": "Khi giá đi ngang nhiều tuần và thanh khoản thấp dần đều, đó là lúc tay to đang gom hàng âm thầm để tạo nền giá siêu vững chắc."
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Thanh khoản trong vùng tích lũy",
+      "unit": "tỷ VNĐ",
+      "data": [
+        {
+          "label": "Đầu nền giá",
+          "value": 150
+        },
+        {
+          "label": "Giữa nền giá",
+          "value": 80
+        },
+        {
+          "label": "Cuối nền giá",
+          "value": 45
+        }
+      ],
+      "duration": 7.0,
+      "narration": "Nhìn vào biểu đồ, giá trị giao dịch giảm từ một trăm năm mươi tỷ xuống còn bốn mươi lăm tỷ đồng, chứng tỏ áp lực bán đã cạn kiệt hoàn toàn."
+    },
+    {
+      "type": "comparison",
+      "heading": "Tích lũy hay Phân phối?",
+      "subheading": "Phân biệt để không sập bẫy",
+      "left": {
+        "title": "Tích lũy",
+        "items": [
+          "Biên độ giá hẹp",
+          "Thanh khoản cạn kiệt",
+          "Tin tức lơ lửng buồn ngủ"
+        ]
+      },
+      "right": {
+        "title": "Phân phối",
+        "items": [
+          "Biên độ giá lỏng lẻo",
+          "Thanh khoản cực lớn",
+          "Tin tốt ra liên tục"
+        ]
+      },
+      "duration": 7.5,
+      "narration": "Đừng nhầm lẫn với phân phối. Tích lũy có biên độ hẹp và tin buồn ngủ, khác hẳn với phân phối đầy hưng phấn và thanh khoản cực lớn."
+    },
+    {
+      "type": "quote",
+      "quote": "Kiên nhẫn ở vùng gom hàng chính là chìa khóa mở cửa lợi nhuận.",
+      "text": "Kiên nhẫn ở vùng gom hàng chính là chìa khóa mở cửa lợi nhuận.",
+      "source": "VN Trend",
+      "duration": 5.0,
+      "narration": "Hãy nhớ câu nói: Kiên nhẫn ở vùng gom hàng chính là chìa khóa mở cửa lợi nhuận."
+    },
+    {
+      "type": "outro",
+      "heading": "Góc nhìn theo phương pháp theo sau xu hướng.",
+      "handle": "@VNTrend",
+      "duration": 4.5,
+      "narration": "Đây là góc nhìn theo phương pháp theo sau xu hướng, không phải khuyến nghị đầu tư. Theo dõi VN Trend để cập nhật mỗi ngày."
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
