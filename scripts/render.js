@@ -81,11 +81,29 @@ async function main() {
 
   // 4. Mở Puppeteer
   const puppeteer = require('puppeteer');
-  const browser = await puppeteer.launch({
-    headless: true,
-    protocolTimeout: 300000, // 5 phút cho 1 lệnh CDP (tránh timeout khi máy bận)
-    args: ['--no-sandbox', '--disable-dev-shm-usage', ...CHROME_ARGS],
-  });
+  // Chrome trên runner CI đôi khi khởi động chậm/treo (lỗi "Timed out ... WS endpoint").
+  // Nâng timeout mặc định 30s -> 120s và thử lại tối đa 3 lần. Đặt DEBUG_CHROME=1
+  // để in log của Chrome (dumpio) khi cần điều tra.
+  const launchBrowser = async () => {
+    let lastErr = null;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        return await puppeteer.launch({
+          headless: true,
+          timeout: 120000,
+          dumpio: !!process.env.DEBUG_CHROME,
+          protocolTimeout: 300000, // 5 phút cho 1 lệnh CDP (tránh timeout khi máy bận)
+          args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', ...CHROME_ARGS],
+        });
+      } catch (e) {
+        lastErr = e;
+        console.warn('⚠ Mở Chrome lỗi (lần ' + attempt + '/3): ' + e.message);
+        await new Promise((r) => setTimeout(r, 5000 * attempt));
+      }
+    }
+    throw lastErr;
+  };
+  const browser = await launchBrowser();
 
   const framesDir = path.join(os.tmpdir(), 'vte-frames-' + Date.now());
   fs.mkdirSync(framesDir, { recursive: true });

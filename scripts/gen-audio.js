@@ -191,7 +191,7 @@ async function main() {
     process.exit(1);
   }
   const content = validated.content;
-  const total = content.scenes.reduce((s, sc) => s + sc.duration, 0);
+  let total = content.scenes.reduce((s, sc) => s + sc.duration, 0);
   const narrationCfg = (content.audio && content.audio.narration) || {};
   const voice = narrationCfg.voice || 'vi-VN-HoaiMyNeural';
   const rate = narrationCfg.rate || '+0%';
@@ -228,6 +228,30 @@ async function main() {
       await ttsToFile(path.join(audioDir, j.mp3), j.text, voice, rate);
       console.log('  ✓ scene ' + (j.scene + 1));
     }
+  }
+
+  // Tự nới duration của scene nếu lời đọc (+delay) dài hơn — nếu không, giọng đọc
+  // bị cắt hoặc tràn sang scene sau (scene cuối còn bị -t total cắt mất). Ghi lại
+  // vào file content để render.js dùng đúng duration mới. Làm TRƯỚC khi tính
+  // start của từng scene và nhạc nền (phụ thuộc tổng thời lượng).
+  let adjusted = false;
+  for (let i = 0; i < content.scenes.length; i++) {
+    const sc = content.scenes[i];
+    if (!(sc.narration && String(sc.narration).trim())) continue;
+    const file = path.join(audioDir, 'narration-' + String(i).padStart(2, '0') + '.mp3');
+    const dur = await audioDuration(file);
+    const need = Math.ceil((delay + dur + 0.4) * 10) / 10;
+    if (need > sc.duration) {
+      console.log('  ↻ scene ' + (i + 1) + ' (' + sc.type + '): nới duration ' +
+        sc.duration + 's -> ' + need + 's cho vừa lời đọc');
+      sc.duration = need;
+      adjusted = true;
+    }
+  }
+  if (adjusted) {
+    fs.writeFileSync(fileArg, JSON.stringify(content, null, 2) + '\n', 'utf8');
+    total = content.scenes.reduce((s, sc) => s + sc.duration, 0);
+    manifest.total = total;
   }
 
   // Đo độ dài + cảnh báo nếu lời đọc vượt duration (áp dụng cho cả hai provider)
