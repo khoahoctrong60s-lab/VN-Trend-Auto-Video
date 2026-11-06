@@ -53,6 +53,11 @@ jobs:
       - name: Cài dependencies Python
         run: pip install -r requirements.txt
 
+      # Ubuntu 24.04 (ubuntu-latest) chặn user namespace không đặc quyền bằng AppArmor,
+      # làm Chrome của Puppeteer có thể không khởi động được.
+      - name: Cho phép Chrome chạy trên Ubuntu 24.04
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       - name: Sinh kịch bản + content.json bằng Gemini
         id: gen
         env:
@@ -70,13 +75,15 @@ jobs:
       - name: Kiểm tra content hợp lệ
         run: npm run validate -- "${{ steps.gen.outputs.json_path }}"
 
+      # --force: BẮT BUỘC tạo lại giọng đọc, vì assets/audio/narration-*.mp3 từ lần
+      # trước đang nằm trong repo và nếu không có --force sẽ bị dùng lại (sai nội dung).
       - name: Sinh giọng đọc + nhạc + SFX (edge TTS, cần mạng)
-        run: npm run gen-audio -- "${{ steps.gen.outputs.json_path }}"
+        run: npm run gen-audio -- "${{ steps.gen.outputs.json_path }}" --force
 
       - name: Render video MP4
         id: render
         run: |
-          npm run render -- "${{ steps.gen.outputs.json_path }}"
+          DEBUG_CHROME=1 npm run render -- "${{ steps.gen.outputs.json_path }}"
           VIDEO_PATH=$(ls -t output/*.mp4 | head -1)
           echo "Video: $VIDEO_PATH ($(du -h "$VIDEO_PATH" | cut -f1))"
           echo "video_path=$VIDEO_PATH" >> "$GITHUB_OUTPUT"
