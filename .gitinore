@@ -15,3 +15,9 @@ assets/audio/.vieneu-jobs.json
 # File hệ điều hành
 .DS_Store
 Thumbs.db
+
+# Audio sinh ra mỗi lần chạy (đừng commit, tránh dùng lại lời đọc cũ)
+assets/audio/narration-*.mp3
+assets/audio/manifest.json
+assets/audio/music.mp3
+assets/audio/sfx-*.mp3
