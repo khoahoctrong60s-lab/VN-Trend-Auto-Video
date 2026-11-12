@@ -21,84 +21,83 @@
     {
       "type": "title",
       "badge": "Góc nhìn VN Trend",
-      "heading": "Đọc vị dòng tiền thông minh",
-      "subheading": "Bí quyết nhận diện sóng ngành chuẩn xác",
+      "heading": "Sai lầm F0 thường mắc",
+      "subheading": "Bẫy tâm lý khi mới tham gia thị trường",
       "highlight": [
-        "dòng tiền"
+        "F0"
       ],
-      "duration": 4.5,
-      "narration": "Đọc vị dòng tiền thông minh là chìa khóa để nhận diện sóng ngành chuẩn xác trên thị trường."
-    },
-    {
-      "type": "comparison",
-      "heading": "Nhà đầu tư mới và chuyên nghiệp",
-      "left": {
-        "title": "Mới tham gia",
-        "items": [
-          "Mua theo tin đồn",
-          "Nhìn giá xanh đỏ",
-          "Sợ hãi khi giảm"
-        ]
-      },
-      "right": {
-        "title": "Dòng tiền lớn",
-        "items": [
-          "Bám theo xu hướng",
-          "Đo lường thanh khoản",
-          "Mua khi tích lũy"
-        ]
-      },
-      "duration": 6.5,
-      "narration": "Nhà đầu tư mới thường mua theo tin đồn và nhìn giá xanh đỏ, trong khi dòng tiền lớn bám theo xu hướng và đo lường thanh khoản."
-    },
-    {
-      "type": "bar-chart",
-      "heading": "Thanh khoản theo giai đoạn thị trường",
-      "unit": "tỷ VNĐ",
-      "data": [
-        {
-          "label": "Giai đoạn đi ngang",
-          "value": 10000
-        },
-        {
-          "label": "Phiên breakout",
-          "value": 25000
-        },
-        {
-          "label": "Nhịp tăng chính",
-          "value": 35000
-        }
-      ],
-      "duration": 7.0,
-      "narration": "Thanh khoản nhảy vọt từ mười nghìn tỷ trong giai đoạn đi ngang lên hai mươi lăm nghìn tỷ ở phiên breakout, và đạt ba mươi lăm nghìn tỷ khi vào nhịp tăng chính."
+      "duration": 3.5,
+      "narration": "Sai lầm mà nhiều nhà đầu tư F0 hay mắc phải khi mới bước chân vào thị trường."
     },
     {
       "type": "bullets",
-      "heading": "Ba bước bắt sóng hiệu quả",
+      "heading": "Ba cạm bẫy tâm lý",
       "items": [
-        "Tìm ngành dẫn dắt",
-        "Chờ điểm tích lũy",
-        "Đi theo xu hướng lớn"
+        "Mua vì nghe hô hào",
+        "Trung bình giá khi giảm",
+        "Sợ bỏ lỡ cơ hội"
       ],
-      "duration": 6.0,
-      "narration": "Ba bước bắt sóng hiệu quả gồm tìm ngành dẫn dắt, chờ điểm tích lũy và đi theo xu hướng lớn của thị trường."
+      "duration": 5.2,
+      "narration": "Đó là mua bán chỉ vì nghe hô hào, liên tục trung bình giá khi cổ phiếu rơi và tâm lý sợ bỏ lỡ cơ hội."
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Hiệu suất tài khoản theo chiến lược",
+      "unit": "phần trăm",
+      "data": [
+        {
+          "label": "Đu đỉnh theo tin đồn",
+          "value": -25
+        },
+        {
+          "label": "Đầu tư ngẫu hứng",
+          "value": -10
+        },
+        {
+          "label": "Theo xu hướng chung",
+          "value": 15
+        }
+      ],
+      "duration": 6.5,
+      "narration": "Nhìn vào biểu đồ ta thấy, việc đu đỉnh theo tin đồn khiến tài khoản âm hai lăm phần trăm, trong khi bám theo xu hướng giúp tăng trưởng mười lăm phần trăm."
+    },
+    {
+      "type": "comparison",
+      "heading": "F0 và người có kinh nghiệm",
+      "left": {
+        "title": "F0 cảm tính",
+        "items": [
+          "Chơi tất tay",
+          "Xem bảng điện cả ngày",
+          "Cắt lỗ là thất bại"
+        ]
+      },
+      "right": {
+        "title": "Nhà đầu tư bền vững",
+        "items": [
+          "Quản trị vốn chặt",
+          "Tuân thủ kỷ luật",
+          "Xem cắt lỗ là bảo hiểm"
+        ]
+      },
+      "duration": 6.8,
+      "narration": "F0 thường chơi tất tay và xem bảng điện cả ngày, còn nhà đầu tư bền vững luôn quản trị vốn và tuân thủ kỷ luật."
     },
     {
       "type": "quote",
-      "heading": "Quy tắc cốt lõi",
-      "text": "Xu hướng là bạn cho đến khi nó đảo chiều.",
-      "quote": "Xu hướng là bạn cho đến khi nó đảo chiều.",
+      "heading": "Bài học xương máu",
+      "text": "Thị trường luôn đúng, chỉ có góc nhìn của chúng ta cần phải linh hoạt thay đổi.",
       "source": "VN Trend",
-      "duration": 5.0,
-      "narration": "Hãy nhớ quy tắc cốt lõi: Xu hướng là bạn cho đến khi nó đảo chiều."
+      "duration": 4.8,
+      "narration": "Thị trường luôn đúng, chỉ có góc nhìn của chúng ta là cần phải linh hoạt thay đổi theo thời gian."
     },
     {
       "type": "outro",
-      "heading": "Góc nhìn cá nhân theo phương pháp trend following.",
-      "subheading": "Theo dõi VN Trend để cập nhật thông tin tài chính hữu ích.",
+      "heading": "Góc nhìn tham khảo",
+      "subheading": "Phương pháp theo xu hướng",
       "handle": "@VNTrend",
-      "duration": 5.5,
-      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Theo dõi VN Trend nhé."
+      "duration": 4.5,
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp theo xu hướng, không phải là khuyến nghị đầu tư."
     }
   ],
   "transition": {
