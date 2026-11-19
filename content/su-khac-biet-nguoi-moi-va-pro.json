@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "su-khac-biet-nguoi-moi-va-pro",
+    "format": "vertical",
+    "fps": 30,
+    "theme": "vn-trend",
+    "language": "vi"
+  },
+  "audio": {
+    "musicVolume": 0.22,
+    "musicFadeOut": 2.5,
+    "manifest": "/assets/audio/manifest.json",
+    "narration": {
+      "provider": "edge",
+      "voice": "vi-VN-HoaiMyNeural",
+      "rate": "+12%",
+      "delay": 0.3
+    }
+  },
+  "scenes": [
+    {
+      "type": "title",
+      "badge": "Góc nhìn VN Trend",
+      "heading": "Đọc vị dòng tiền thông minh",
+      "subheading": "Sự thật về chứng khoán",
+      "highlight": [
+        "dòng tiền"
+      ],
+      "narration": "Đọc vị dòng tiền thông minh là chìa khóa giúp nhà đầu tư mới không bị đu đỉnh theo đám đông trên thị trường chứng khoán.",
+      "duration": 5.5
+    },
+    {
+      "type": "comparison",
+      "heading": "Tư duy khác nhau thế nào",
+      "left": {
+        "title": "Người mới",
+        "items": [
+          "Mua vì nghe phím hàng",
+          "Thích cổ phiếu giá rẻ",
+          "Sợ khi thị trường giảm"
+        ]
+      },
+      "right": {
+        "title": "Nhà đầu tư pro",
+        "items": [
+          "Theo dấu dòng tiền lớn",
+          "Chọn cổ phiếu mạnh nhất",
+          "Xem nhịp giảm là cơ hội"
+        ]
+      },
+      "narration": "Người mới thường mua vì nghe phím hàng và thích cổ phiếu giá rẻ, trong khi dân pro luôn theo dấu dòng tiền lớn và chọn cổ phiếu mạnh nhất.",
+      "duration": 6.5
+    },
+    {
+      "type": "bar-chart",
+      "heading": "Khối lượng giao dịch thực tế",
+      "unit": "triệu CP",
+      "data": [
+        {
+          "label": "Phiên đi ngang",
+          "value": 15
+        },
+        {
+          "label": "Phiên bứt phá",
+          "value": 50
+        },
+        {
+          "label": "Phiên kiểm định",
+          "value": 30
+        }
+      ],
+      "narration": "Khối lượng vọt từ mười lăm lên năm mươi triệu cổ phiếu đúng phiên bứt phá, cho thấy dòng tiền lớn đang thực sự nhập cuộc.",
+      "duration": 6.0
+    },
+    {
+      "type": "bullets",
+      "heading": "Ba bước bắt sóng dòng tiền",
+      "items": [
+        "Quét nhóm ngành dẫn dắt",
+        "Chờ cổ phiếu vượt đỉnh",
+        "Giải ngân theo từng phần"
+      ],
+      "narration": "Hãy nhớ ba bước để bắt sóng dòng tiền gồm quét nhóm ngành dẫn dắt, chờ cổ phiếu vượt đỉnh và giải ngân theo từng phần.",
+      "duration": 5.5
+    },
+    {
+      "type": "quote",
+      "heading": "Góc nhìn trend following",
+      "text": "Không dự đoán thị trường, hãy hành động theo những gì thị trường đang thể hiện.",
+      "source": "VN Trend",
+      "narration": "Hãy nhớ rằng không dự đoán thị trường, mà hãy hành động theo những gì thị trường đang thể hiện mỗi ngày.",
+      "duration": 5.0
+    },
+    {
+      "type": "outro",
+      "heading": "Đầu tư có phương pháp",
+      "subheading": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư.",
+      "handle": "@VNTrend",
+      "narration": "Đây là góc nhìn cá nhân theo phương pháp trend following, không phải khuyến nghị đầu tư. Nhớ theo dõi VN Trend nhé.",
+      "duration": 5.5
+    }
+  ],
+  "transition": {
+    "type": "slide-up",
+    "duration": 0.4
+  }
+}
